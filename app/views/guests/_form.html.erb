@@ -4,16 +4,17 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :attending %>
+    <%= f.input :attending, label: "Yes, I will attend. **Event details will be sent by text**" %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :phone_number %>
     <%= f.input :address %>
-    <%= f.input :city_state %>
+    <%= f.input :city_state, label: "City, State" %>
     <%= f.input :zipcode %>
-    <%= f.input :reminders %>
-    <%= f.input :birth_alert %>
-    <%= f.input :see_photos %>
+    <p>Check boxes below to receive text messages about the following:</p>
+    <%= f.input :reminders, label: "Send me event Reminders" %>
+    <%= f.input :birth_alert, label: "Message me when the baby is born!" %>
+    <%= f.input :see_photos, label: "Let me know when you post newborn photos" %>
   </div>
 
   <div class="form-actions">

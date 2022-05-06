@@ -1,0 +1,25 @@
+.sideImage {
+  height: 100vh;
+  width: 500px;
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("Nursery_Tent.jpeg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: bottom;
+  position:sticky;
+  top: 0
+}
+
+.sideInfo {
+  margin: 30px auto;
+  // height: 90vh;
+  // overflow: scroll;
+  // overflow-x: hidden; /* Hide horizontal scrollbar */
+  // margin-left: 400px;
+}
+body {
+  background-color: #D9D8D7;
+}
+
+h1 {
+  margin-bottom: 20px;
+}

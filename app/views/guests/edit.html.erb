@@ -1,6 +1,17 @@
-<h1>Editing Guest</h1>
+<div class="d-flex">
+  <div class="container m-0">
+    <div class="row">
+      <div class="col-3 sideImage m-0">
+      </div>
+      <div class="col-6 sideInfo">
+        <h1>Confirm Your Attendance</h1>
 
-<%= render 'form', guest: @guest %>
+        <%= render 'form', guest: @guest %>
 
-<%= link_to 'Show', @guest %> |
-<%= link_to 'Back', guests_path %>
+        <%= link_to 'Show', @guest %> |
+        <%= link_to 'Back', guests_path %>
+
+      </div>
+    </div>
+  </div>
+</div>

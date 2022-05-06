@@ -1,54 +1,67 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Attending:</strong>
-  <%= @guest.attending %>
-</p>
+<div class="d-flex">
+  <p id="notice"><%= notice %></p>
+  <div class="container m-0">
+    <div class="row">
+      <div class="col-3 sideImage m-0">
+      </div>
+      <div class="col-7 m-3">
 
-<p>
-  <strong>First name:</strong>
-  <%= @guest.first_name %>
-</p>
+        <p>
+          <strong>Attending:</strong>
+          <%= @guest.attending %>
+        </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @guest.last_name %>
-</p>
+        <p>
+          <strong>First name:</strong>
+          <%= @guest.first_name %>
+        </p>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @guest.phone_number %>
-</p>
+        <p>
+          <strong>Last name:</strong>
+          <%= @guest.last_name %>
+        </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @guest.address %>
-</p>
+        <p>
+          <strong>Phone number:</strong>
+          <%= @guest.phone_number %>
+        </p>
 
-<p>
-  <strong>City state:</strong>
-  <%= @guest.city_state %>
-</p>
+        <p>
+          <strong>Address:</strong>
+          <%= @guest.address %>
+        </p>
 
-<p>
-  <strong>Zipcode:</strong>
-  <%= @guest.zipcode %>
-</p>
+        <p>
+          <strong>City state:</strong>
+          <%= @guest.city_state %>
+        </p>
 
-<p>
-  <strong>Reminders:</strong>
-  <%= @guest.reminders %>
-</p>
+        <p>
+          <strong>Zipcode:</strong>
+          <%= @guest.zipcode %>
+        </p>
 
-<p>
-  <strong>Birth alert:</strong>
-  <%= @guest.birth_alert %>
-</p>
+        <p>
+          <strong>Reminders:</strong>
+          <%= @guest.reminders %>
+        </p>
 
-<p>
-  <strong>See photos:</strong>
-  <%= @guest.see_photos %>
-</p>
+        <p>
+          <strong>Birth alert:</strong>
+          <%= @guest.birth_alert %>
+        </p>
 
-<%= link_to 'Edit', edit_guest_path(@guest) %> |
-<%= link_to 'Back', guests_path %>
+        <p>
+          <strong>See photos:</strong>
+          <%= @guest.see_photos %>
+        </p>
+
+        <%= link_to 'Edit', edit_guest_path(@guest) %> |
+        <%= link_to 'Back', guests_path %>
+
+
+      </div>
+    </div>
+  </div>
+</div>
