@@ -9,13 +9,6 @@
   top: 0
 }
 
-.sideInfo {
-  // padding: 25px;
-  // height: 90vh;
-  // overflow: scroll;
-  // overflow-x: hidden; /* Hide horizontal scrollbar */
-  // margin-left: 400px;
-}
 body {
   background-color: #D9D8D7;
 }
@@ -24,21 +17,27 @@ h1 {
   margin-bottom: 20px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1000px) {
   .sideInfo{
     // width: 90vw;
     margin: 30px auto;
 
   }
+  .sideImage {
+    width: 500px;
+  }
 }
 
+@media only screen and (max-width: 1000px) {
+  .sideImage {
+    width: 300px;
+  }
+}
 @media only screen and (max-width: 600px) {
   .sideImage {
     display: none;
   }
   .sideInfo{
-    // width: 90vw;
     margin: 15px;
-
   }
 }
