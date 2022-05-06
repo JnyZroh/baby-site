@@ -27,7 +27,14 @@ class GuestsController < ApplicationController
     @guest = Guest.new(guest_params)
 
     if @guest.save
-      redirect_to @guest, notice: 'Guest was successfully created.'
+      if @guest[:attending]== true
+      redirect_to root_path, notice: "You have RSVP'd :) Zoom details will be sent soon"
+      end
+
+      if @guest[:attending]== false
+        redirect_to root_path, notice: 'We wish you could join us! ❤️'
+      end
+
     else
       render :new
     end
@@ -36,9 +43,17 @@ class GuestsController < ApplicationController
   # PATCH/PUT /guests/1
   def update
     if @guest.update(guest_params)
-      redirect_to @guest, notice: 'Guest was successfully updated.'
-    else
-      render :edit
+      if @guest.save
+        if @guest[:attending]== true
+        redirect_to root_path, notice: "You have RSVP'd :) Zoom details will be sent soon!"
+        end
+
+        if @guest[:attending]== false
+          redirect_to root_path, notice: 'We wish you could join us! ❤️'
+        end
+      else
+        render :edit
+      end
     end
   end
 
