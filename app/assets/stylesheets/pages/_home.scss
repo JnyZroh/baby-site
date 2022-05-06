@@ -1,0 +1,95 @@
+// Specific CSS for your home-page
+body {
+  // background-color: #FFFFFF;
+  // background-image: url('https://images.unsplash.com/photo-1508802417248-856259d2c0f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+  font-family: 'Arima Madurai', cursive;
+}
+
+.background {
+  text-align: center;
+  background-repeat: no-repeat;
+  // background-size:cover;
+  background-position:center;
+  background-size: 1500px;
+}
+@media only screen and (min-width: 600px) {
+  .background {
+    height: 120vh;
+    border: 1px, solid, blue;
+    color: white;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Crib.jpeg");
+  }
+  .linksDiv {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body {
+    width: 400px;
+    color: white;
+  }
+  .background {
+    overflow:scroll;
+    border: 1px, solid, blue;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Tent.jpeg");
+    background-size: cover;
+    // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Light.jpeg");
+  }
+  .linksDiv {
+    width: 300px;
+  }
+}
+
+h1 {
+  font-family: 'Corinthia', cursive;
+  font-size: 72px;
+  letter-spacing: .2rem;
+  line-height: .75;
+  color: white;
+  font-weight: bold;
+  // text-align: center;
+}
+
+h2 {
+  font-family: 'Arima Madurai', cursive;
+  margin-top:15px;
+}
+.mainInfoDiv {
+  font-size:20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.buttonsDiv {
+  // width: 350px;
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid blue;
+}
+.buttonsDiv button {
+  // border-color: white;
+  background-color: hsla(0, 0%, 100%, 0);
+  color: white;
+  // border-radius: 5px;
+  font-weight: bold;
+  // font-size:20px;
+}
+
+.buttonsDiv p {
+  font-size:18px;
+}
+
+.linksDiv {
+  margin-top: 15px;
+  background-color: rgba(172, 172, 172, 0.5);
+  padding: 5px;
+  border-radius: 20px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+.linksDiv a {
+  color: white;
+  font-weight: bold;
+}
