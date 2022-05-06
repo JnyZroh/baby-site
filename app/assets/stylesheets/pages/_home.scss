@@ -14,7 +14,7 @@ body {
 }
 @media only screen and (min-width: 600px) {
   .background {
-    height: 120vh;
+    height: 130vh;
     border: 1px, solid, blue;
     color: white;
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Crib.jpeg");
@@ -48,6 +48,7 @@ h1 {
   line-height: .75;
   color: white;
   font-weight: bold;
+  padding: 15px 0;
   // text-align: center;
 }
 

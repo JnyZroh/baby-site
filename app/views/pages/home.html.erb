@@ -18,7 +18,7 @@
 
         <div class="linksDiv">
           <div class="my-3">
-            <p id="rsvp" style="padding: 10px 0"><button type="button" class="btn btn-light">RSVP by May 22</button></p>
+            <%# <p id="rsvp" style="padding: 10px 0"><button type="button" class="btn btn-light">RSVP by May 22</button></p>
             <script>
               const rsvp = document.getElementById("rsvp")
               rsvp.addEventListener("click", (event) => {
@@ -26,22 +26,19 @@
                 console.log(event.currentTarget);
                 alert("Please text your FULL NAME and FULL ADDRESS to Tonya, 313-452-9897")
               });
-            </script>
+            </script> %>
 
-            <%# <p>To RSVP, enter the number used to send you a text invite</p> %>
-            <%# <form action="/guest_list" method="get">
+            <form action="/guests/:id/edit" method="get">
               <input type="text" name="phone_number" placeholder="Your phone number">
               <input type="submit" value="RSVP">
-            </form> %>
+            </form>
           </div>
           <p>Want to send a bit of your love to Montreal?</p>
           <p>Visit the <a href="https://amzn.to/3KQxCLS">Baby Registry</a>
-          or <br> send money with <a href="https://cash.app/$jnygrppr">CashApp</a></p>
+          or <br> send a monetary gift with <a href="https://cash.app/$jnygrppr">CashApp</a></p>
         </div>
           <p style="padding: 10px 0">
-            <button type="button" class="btn btn-outline-light"> Questions
-              <%#= link_to question_path, class: "nav-link", style:"color: #046E8F; font-weight: bold;" %>
-            </button>
+              <%= link_to "Questions", questions_path, class: "btn btn-outline-light", style:"font-weight: bold;" %>
           </p>
 
       </div>

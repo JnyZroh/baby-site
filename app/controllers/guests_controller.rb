@@ -17,6 +17,9 @@ class GuestsController < ApplicationController
 
   # GET /guests/1/edit
   def edit
+    if @guest.nil?
+      redirect_to new_guest_path
+    end
   end
 
   # POST /guests
@@ -47,9 +50,13 @@ class GuestsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_guest
-      @guest = Guest.find(params[:id])
+  def set_guest
+    if !params[:phone_number].nil?
+    @guest = Guest.find_by(phone_number: params[:phone_number])
+    else
+    @guest = Guest.find(params[:id])
     end
+  end
 
     # Only allow a list of trusted parameters through.
     def guest_params
