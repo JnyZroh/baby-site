@@ -1,5 +1,26 @@
 <div class="background" style="position: relative">
-  <span style="position:absolute; right:10px; top: 10px"> <a href="mailto:jnygripper@gmail.com"> Website created by Janaya</a></span>
+  <span id="createdBy"><p id="intro">Website created by Janaya</p>
+    <div id="freelance"><p>Janaya is a freelance web developer!
+      Contact her if you'd like to have a website.</p>
+      <a href="mailto:jnygripper@gmail.com" style="text-decoration:none;">
+      jnygripper@gmail.com</a>
+    </div>
+  </span>
+
+  <script>
+    const createdBy = document.getElementById("createdBy")
+    const freelance = document.getElementById("freelance")
+    createdBy.addEventListener("click", (event) => {
+      console.log(event);
+      console.log(event.currentTarget);
+       if (freelance.style.display === "none") {
+          freelance.style.display = "block";
+        } else {
+          freelance.style.display = "none";
+        }
+    });
+  </script>
+
   <div class="header" style="width: 80vw; height: 100vh; margin:0 auto;">
       <div style="padding-top: 50px">
         <h1>Baby Zroh is on the way!</h1>
@@ -18,16 +39,6 @@
 
         <div class="linksDiv">
           <div class="my-3">
-            <%# <p id="rsvp" style="padding: 10px 0"><button type="button" class="btn btn-light">RSVP by May 22</button></p>
-            <script>
-              const rsvp = document.getElementById("rsvp")
-              rsvp.addEventListener("click", (event) => {
-                console.log(event);
-                console.log(event.currentTarget);
-                alert("Please text your FULL NAME and FULL ADDRESS to Tonya, 313-452-9897")
-              });
-            </script> %>
-
             <form action="/guests/:id/edit" method="get">
               <input type="text" name="phone_number" placeholder="Your phone number">
               <input type="submit" value="RSVP">
