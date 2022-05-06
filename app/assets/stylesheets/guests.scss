@@ -1,3 +1,13 @@
 // Place all the styles related to the Guests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (max-width: 600px) {
+  .sideImage {
+    display: none;
+  }
+
+}

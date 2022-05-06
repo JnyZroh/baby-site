@@ -1,14 +1,12 @@
 <div class="d-flex">
   <div class="container m-0">
     <div class="row">
-      <div class="col-3 sideImage m-0">
+      <div class="col-3 sideImage">
       </div>
-      <div class="col-6 sideInfo">
-        <h1>New Guest</h1>
+      <div class="col px-4 sideInfo">
+        <h1 style="text-shadow: 2px 2px #7D7469">Add Your Info</h1>
 
         <%= render 'form', guest: @guest %>
-
-        <%= link_to 'Back', guests_path %>
 
       </div>
     </div>

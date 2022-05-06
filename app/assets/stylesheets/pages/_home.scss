@@ -16,7 +16,7 @@ body {
   .background {
     height: 130vh;
     border: 1px, solid, blue;
-    color: white;
+    // color: white;
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Crib.jpeg");
   }
   .linksDiv {
@@ -26,7 +26,7 @@ body {
 @media only screen and (max-width: 600px) {
   body {
     width: 400px;
-    color: white;
+    // color: white;
   }
   .background {
     overflow:scroll;
