@@ -1,7 +1,5 @@
 // Specific CSS for your home-page
 body {
-  // background-color: #FFFFFF;
-  // background-image: url('https://images.unsplash.com/photo-1508802417248-856259d2c0f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
   font-family: 'Arima Madurai', cursive;
 }
 #createdBy {
@@ -23,6 +21,7 @@ body {
 }
 #freelance {
   display: none;
+  color: white;
 }
 
 #intro {
@@ -33,7 +32,6 @@ body {
 .background {
   text-align: center;
   background-repeat: no-repeat;
-  // background-size:cover;
   background-position:center;
   background-size: 1500px;
 }
@@ -41,17 +39,24 @@ body {
   .background {
     height: 130vh;
     border: 1px, solid, blue;
-    // color: white;
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Crib.jpeg");
   }
   .linksDiv {
     width: 400px;
+    color: white;
+  }
+
+  .linksDiv a {
+    color: white;
+  }
+  .linksDiv a:hover {
+    // color: rgba(255, 228, 175, 0.85);
+    color: rgba(0, 0, 0, 0.4);
   }
 }
 @media only screen and (max-width: 600px) {
   body {
     width: 400px;
-    // color: white;
   }
   .background {
     overflow:scroll;
@@ -59,10 +64,13 @@ body {
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Tent.jpeg");
     background-size: cover;
-    // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Light.jpeg");
   }
   .linksDiv {
     width: 300px;
+    color:white;
+  }
+  .linksDiv a {
+    color: rgba(255, 228, 175, 0.85);
   }
 }
 
@@ -74,7 +82,6 @@ h1 {
   color: white;
   font-weight: bold;
   padding: 15px 0;
-  // text-align: center;
 }
 
 h2 {
@@ -83,24 +90,21 @@ h2 {
 }
 .mainInfoDiv {
   font-size:20px;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 5px;
   border-radius: 20px;
+  color: white;
 }
 
 .buttonsDiv {
-  // width: 350px;
   display: flex;
   justify-content: space-evenly;
   border: 1px solid blue;
 }
 .buttonsDiv button {
-  // border-color: white;
   background-color: hsla(0, 0%, 100%, 0);
   color: white;
-  // border-radius: 5px;
   font-weight: bold;
-  // font-size:20px;
 }
 
 .buttonsDiv p {
@@ -109,13 +113,35 @@ h2 {
 
 .linksDiv {
   margin-top: 15px;
-  background-color: rgba(172, 172, 172, 0.5);
+  // background-color: rgba(172, 172, 172, 0.5);
+  background-color:rgba(165, 156, 148, 0.5);
   padding: 5px;
   border-radius: 20px;
   margin: 0 auto;
   font-weight: bold;
+  // color: white;
 }
 .linksDiv a {
-  color: white;
   font-weight: bold;
+}
+
+.label {
+  background-color: white;
+  color: rgb(165, 156, 148);
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+.button {
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 1px 5px;
+  background-color: rgb(165, 156, 148);
+  font-weight: bold;
+  color: white;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
 }

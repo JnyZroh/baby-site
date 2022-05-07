@@ -17,6 +17,7 @@
       console.log(event.currentTarget);
        if (freelance.style.display === "none") {
           freelance.style.display = "block";
+          createdBy.style.backgroundColor = "rgba(165, 156, 148, 0.85)";
         } else {
           freelance.style.display = "none";
         }
@@ -42,8 +43,8 @@
         <div class="linksDiv">
           <div class="my-3">
             <form action="/guests/:id/edit" method="get">
-              <input type="text" name="phone_number" placeholder="Your phone number">
-              <input type="submit" value="RSVP">
+              <input type="text" name="phone_number" placeholder="Your phone number" class="label">
+              <input type="submit" value="RSVP", class="button" >
             </form>
           </div>
           <p>Want to send a bit of your love to Montreal?</p>
