@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 # custom
 gem 'simple_form', github: 'heartcombo/simple_form'
+gem "clearance"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

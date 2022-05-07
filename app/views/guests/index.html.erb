@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
+<%# <div style="position: relative; width:100vw; height:10px; margin:0; border:1px solid black"> %>
+  <div class="d-flex" style="position: absolute; right:0">
+    <% if signed_in? %>
+      Signed in as: <%= current_user.email %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign in', sign_in_path %>
+    <% end %>
+    </div>
+    <div id="flash">
+    <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+  </div>
+<%# </div> %>
 
 <h1>Guests</h1>
 
