@@ -1,4 +1,5 @@
 class GuestsController < ApplicationController
+  before_action :require_login, only: [:index, :show]
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
   # GET /guests
