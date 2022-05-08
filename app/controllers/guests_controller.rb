@@ -29,11 +29,11 @@ class GuestsController < ApplicationController
 
     if @guest.save
       if @guest[:attending]== true
-      redirect_to root_path, notice: "You have RSVP'd :) Zoom details will be sent soon"
+      redirect_to questions_path, notice: "You have RSVP'd :) Zoom details will be sent soon"
       end
 
       if @guest[:attending]== false
-        redirect_to root_path, notice: 'We wish you could join us! ❤️'
+        redirect_to questions_path, notice: 'We wish you could join us! ❤️'
       end
 
     else
@@ -46,11 +46,11 @@ class GuestsController < ApplicationController
     if @guest.update(guest_params)
       if @guest.save
         if @guest[:attending]== true
-        redirect_to root_path, notice: "You have RSVP'd :) Zoom details will be sent soon!"
+        redirect_to questions_path, notice: "You have RSVP'd :) Zoom details will be sent soon!"
         end
 
         if @guest[:attending]== false
-          redirect_to root_path, notice: 'We wish you could join us! ❤️'
+          redirect_to questions_path, notice: 'We wish you could join us! ❤️'
         end
       else
         render :edit

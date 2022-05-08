@@ -41,3 +41,26 @@ h1 {
     margin: 15px;
   }
 }
+
+li {
+  list-style-type: none;
+}
+
+p.question {
+  font-weight: bold;
+  margin: 0;
+}
+p.answer {
+  padding: 0;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
