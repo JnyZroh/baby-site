@@ -1,17 +1,57 @@
 <%# <h1>Guests#show</h1> %>
-<div class="d-flex">
+<div class="d-flex" style="position:relative">
+  <span><p id="notice" style="position:absolute; top: 10px; right: 10px; background-color:rgb(165, 156, 148); color:black"><%= notice %></p></span>
   <div class="container m-0">
     <div class="row">
       <div class="col-3 sideImage">
       </div>
       <div class="col px-4 sideInfo">
-        <h1 style="text-shadow: 2px 2px #7D7469">Common Questions</h1>
+        <h1 style="text-shadow: 2px 2px #7D7469">Details & Questions</h1>
+        <h2>The virtual shower:</h2>
+        <p>Plan to come, dressed to impress but still comfy. Prepare your favorite tea or another drink to sip while we're together.
+        Janaya's favorites are Rooibos and Chai but prepare what you'd like. We'll also play games and share stories and advice!</p>
+        <p>For those who RSVP by the 22nd, we'll randomly select 15 addresses to send a special gift</p>
+
+        <h2>Other questions you probably have...</h2>
+          <h3>About the Shower</h3>
           <ul>
-          <li>What is the gender?</li>
-          <li>Is there a theme or dress code for the shower?</li>
-          <li>What is the due date?</li>
-          <li>How big is her belly?</li>
-          <li>What does she need the most??</li>
+          <li>
+          <p class="question"><i class="arrow down"></i> Is there a theme or dress code for the shower?</p>
+          <p class="answer">No real dress code but it would be great if you dressed as if you were
+          joining us in person. We'll have a little tea party. Janaya's favorite teas are
+          Rooibos and Chai, but bring what you would like.</p>
+          </li>
+          <li>
+          <p class="question"><i class="arrow down"></i> What colors would they like for gifts?</p>
+          <p class="answer">We love autumn tones - beige, burgundy, mustard yellow, forest green. Think of a beautiful fall day! </p>
+          </li>
+          </ul>
+          <h3>About the Baby</h3>
+          <ul>
+          <li>
+          <p class="question"><i class="arrow down"></i> Do they know the gender?</p>
+          <p class="answer">Not yet, it will be a surprise! We'll all find out on the day of the birth.</p>
+          </li>
+          <li>
+          <p class="question"><i class="arrow down"></i> Does she want a boy or a girl?</p>
+          <p class="answer">Janaya doesn't like to do hair so she'd love to have a boy!</p>
+          </li>
+          <li>
+          <p class="question"><i class="arrow down"></i> What is the due date?</p>
+          <p class="answer">The little one is expected to arrive on the 22nd of June!</p>
+          </li>
+          <li>
+          <p class="question"><i class="arrow down"></i> Have they chosen a name?</p>
+          <p class="answer">Not yet. It's the hardest thing - we welcome suggestions!!</p>
+          </li>
+          </ul>
+
+          <h3>About the Mother-to-be</h3>
+          <ul>
+          <li>
+          <p class="question"><i class="arrow down"></i> What does she need the most?</p>
+          <p class="answer">There are items on the registry that are listed as Must-have. If you are a mother and you think of something that was not added, don't hesistate to get it.</p>
+          </li>
           </ul>
       </div>
     </div>
