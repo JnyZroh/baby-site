@@ -13,8 +13,19 @@ body {
   background-color: #D9D8D7;
 }
 
-h1 {
+h1.questions {
   margin-bottom: 20px;
+  text-shadow: 2px 2px #7D7469;
+  font-size: 64px;
+}
+
+h2.questions {
+  font-size: 32px;
+}
+
+h3.topic {
+  font-size: 20px;
+  padding-left: 20px;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -26,12 +37,33 @@ h1 {
   .sideImage {
     width: 500px;
   }
+
+  img {
+    display: none;
+  }
+
 }
 
 @media only screen and (max-width: 1000px) {
   .sideImage {
     width: 300px;
   }
+  img {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 800px) {
+  .sideImage {
+    display: none;
+  }
+  img {
+    display: block;
+    height: 100px;
+    width: 500px;
+    object-fit:cover;
+    object-position: top;  }
 }
 @media only screen and (max-width: 600px) {
   .sideImage {
@@ -40,10 +72,19 @@ h1 {
   .sideInfo{
     margin: 15px;
   }
+  img {
+    display: block;
+    height: 100px;
+    width: 300px;
+    object-fit:cover;
+    object-position: top;
+    margin: 0 auto;
+  }
 }
 
 li {
   list-style-type: none;
+  padding: 5px;
 }
 
 p.question {
@@ -51,6 +92,7 @@ p.question {
   margin: 0;
 }
 p.answer {
+  display: none;
   padding: 0;
 }
 
