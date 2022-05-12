@@ -1,7 +1,8 @@
 .sideImage {
   height: 100vh;
   width: 500px;
-  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("Nursery_Tent.jpeg");
+  // background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("Nursery_Tent.jpeg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("unsplash-baby-feet.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   background-position: bottom;
@@ -15,17 +16,27 @@ body {
 
 h1.questions {
   margin-bottom: 20px;
-  text-shadow: 2px 2px #7D7469;
+  // text-shadow: 2px 2px #7D7469;
+  text-shadow: 2px 2px #8f2e05;
   font-size: 64px;
 }
 
 h2.questions {
   font-size: 32px;
+  color: #8f2e05;
 }
 
 h3.topic {
   font-size: 20px;
   padding-left: 20px;
+  color: #8f2e05;
+}
+
+a {
+  color: #008080;
+}
+a:hover {
+  color: #005223
 }
 
 @media only screen and (min-width: 1000px) {
@@ -38,7 +49,7 @@ h3.topic {
     width: 500px;
   }
 
-  img {
+  img#tea {
     display: none;
   }
 
@@ -48,7 +59,7 @@ h3.topic {
   .sideImage {
     width: 300px;
   }
-  img {
+  img#tea {
     display: none;
   }
 
@@ -58,7 +69,7 @@ h3.topic {
   .sideImage {
     display: none;
   }
-  img {
+  img#tea {
     display: block;
     height: 100px;
     width: 500px;
@@ -72,7 +83,7 @@ h3.topic {
   .sideInfo{
     margin: 15px;
   }
-  img {
+  img#tea {
     display: block;
     height: 100px;
     width: 300px;
@@ -90,9 +101,10 @@ li {
 p.question {
   font-weight: bold;
   margin: 0;
+  color: #2B3352;
 }
 p.answer {
-  display: none;
+  // display: none;
   padding: 0;
 }
 
@@ -105,4 +117,33 @@ p.answer {
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+img.hair {
+  width: 100px;
+  height: 100px;
+}
+
+div#colors span {
+  height: 30px;
+  width: 45px;
+  border-radius: 5px;
+}
+
+#beige {
+  background-color: #FFE4AF;
+}
+#red {
+  // background-color: #C25523;
+  // background-color: #B7410E;
+  background-color: #8f2e05;
+}
+#teal {
+  background-color: #008080;
+}
+#green {
+  background-color: #005223;
+}
+#blue {
+  background-color: #2B3352;
 }

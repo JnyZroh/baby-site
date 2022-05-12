@@ -41,21 +41,25 @@
         </div>
 
         <div class="linksDiv">
-          <div class="my-3">
-            <form action="/guests/:id/edit" method="get">
-              <label for="phone_number">Enter your phone number to add/update your RSVP</label>
-              <div>
-              <input type="text" name="phone_number" placeholder="### - ### - ####" class="label">
-              <input type="submit" value="RSVP", class="button" >
-              </div>
-            </form>
+          <div class="my-3" style="width: 300px; margin: 0 auto">
+            <p>You can click to RSVP now or get More Info about the Shower.</p>
+            <p class="d-flex justify-content-around m-0" style="padding: 10px 0">
+              <%= link_to "RSVP now", new_guest_path, class: "btn btn-outline-light", style:"font-weight: bold; box-shadow: 2px 2px rgba(0, 0, 0, 0.2)" %>
+              <%= link_to "More Info", questions_path, class: "btn btn-outline-light", style:"font-weight: bold; box-shadow: 2px 2px rgba(0, 0, 0, 0.2)" %>
+            </p>
           </div>
           <p>Want to send a bit of your love to Montreal?</p>
-          <p>Visit the <a href="https://amzn.to/3KQxCLS">Baby Registry</a>
-          or <br> send a monetary gift with <a href="https://cash.app/$jnygrppr">CashApp</a></p>
+          <p>Visit the <a href="https://amzn.to/3KQxCLS" class="gifts">Baby Registry</a>
+          or <br> send a monetary gift with <a href="https://cash.app/$jnygrppr" class="gifts">CashApp</a></p>
+          <%# <div class="my-1" style="width: 300px; margin: 0 auto">
+            <p class="m-0">Visit the Amazon Baby Registry or send money with CashApp</p>
+            <div class="d-flex justify-content-around">
+              <div class="btn p-1"><a href="https://amzn.to/3KQxCLS" class="gifts">Baby Registry</a></div>
+              <div class="btn p-1"><a href="https://amzn.to/3KQxCLS" class="gifts">Baby Registry</a></div>
+            </div>
+          </div> %>
         </div>
           <p style="padding: 10px 0">
-              <%= link_to "More Info", questions_path, class: "btn btn-outline-light", style:"font-weight: bold;" %>
           </p>
 
       </div>

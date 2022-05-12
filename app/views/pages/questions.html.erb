@@ -11,40 +11,68 @@
         <p>
           Prepare your favorite tea or another drink to sip while we're together.
           Janaya's favorites are Rooibos and Chai but prepare what you'd like.<br><br>
-          Dress to impress but you can still be comfortable. Most importantly, come prepared to have some fun!
+          Dress to impress but still be comfortable. Most importantly, come prepared to have some fun!
           We'll play games and share stories and advice to prepare her for the little one!
         </p>
-        <p style="font-weight:bold">We want to send a special gift to 10 people. Please RSVP by the 29th to be included in the drawing!</p>
-        <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2067&q=80" alt="china teacup full of tea with tea leaves all around">
+        <p style="font-weight:bold">We want to send a special gift to 10 people. Please <%= link_to "RSVP by Sunday, May 29th", new_guest_path %>
+        to be included in the drawing!</p>
+        <img id="tea" src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2067&q=80" alt="china teacup full of tea with tea leaves all around">
 
         <h2 class="questions">Questions</h2>
           <h3 class="topic">...about the Shower</h3>
           <ul>
           <li>
+          <p class="question"><i class="arrow down"></i> I can no longer attend. Can I update my RSVP?</p>
+          <p><div class="my-3">
+            <form action="/guests/:id/edit" method="get">
+              <label for="phone_number">Enter your phone number to update your RSVP</label>
+              <div>
+              <input type="text" name="phone_number" placeholder="### - ### - ####" class="label">
+              <input type="submit" value="RSVP", class="button" >
+              </div>
+            </form>
+          </div></p>
+          </li>
+          <li>
           <p class="question"><i class="arrow down"></i> Is there a theme or dress code for the shower?</p>
-          <p class="answer">No real dress code but it would be great if you dressed as if you were
-          joining us in person. We'll have a little tea party. Janaya's favorite teas are
-          Rooibos and Chai, but bring what you would like.</p>
+          <p class="answer">It would be great if you dressed as if you were joining us in person.
+          If you want to try Janaya's favorite teas, check out these two:
+          <a href="https://commoditeas.com/collections/all-teas/products/vanilla-rooibos">Vanilla Rooibos</a> and
+          <a href="https://commoditeas.com/collections/all-teas/products/chai-tea">Chai</a>.</p>
           </li>
           <li>
           <p class="question"><i class="arrow down"></i> What colors would they like for gifts?</p>
-          <p class="answer">We love autumn tones - beige, burgundy, mustard yellow, forest green. Think of a beautiful fall day!<br>
+          <p class="answer">We love autumn tones - beige, burgundy, teal, forest green. Think of a beautiful fall day!<br>
           </p>
+          <div id="colors" class="d-flex justify-content-around" style="width:300px">
+            <span id="beige"></span>
+            <span id="red"></span>
+            <span id="teal"></span>
+            <span id="green"></span>
+            <span id="blue"></span>
+          </div>
+          </li>
+          <li>
+          <p class="question"><i class="arrow down"></i> Can I send money instead of buying a gift?</p>
+          <p class="answer">Yes, you can send to $jnygrppr with <a href="https://cash.app/$jnygrppr">CashApp</a>.</p>
           </li>
           </ul>
           <h3 class="topic">...about the Baby</h3>
           <ul>
           <li>
           <p class="question"><i class="arrow down"></i> Do they know the gender?</p>
-          <p class="answer">Not yet, it will be a surprise! We'll all find out on the day of the birth.</p>
+          <p class="answer">Not yet, it will be a surprise! If you want to find out on the day of the birth, let us know on your RSVP.</p>
           </li>
           <li>
-          <p class="question"><i class="arrow down"></i> Does she want a boy or a girl?</p>
-          <p class="answer">Janaya doesn't like to do hair so she'd love to have a boy!</p>
+            <p class="question"><i class="arrow down"></i> Do they want a boy or a girl?</p>
+            <div>
+              <%# <img id="hair" src="https://www.voice-online.co.uk/wp-content/uploads/2021/09/GettyImages-169327593.jpg" alt=""> %>
+              <p class="answer">Janaya is not sure she can handle a full head of hair, so she'd love to have a boy! Nate is ready for either!</p>
+            </div>
           </li>
           <li>
           <p class="question"><i class="arrow down"></i> What is the due date?</p>
-          <p class="answer">The little one is expected to arrive on the 22nd of June!</p>
+          <p class="answer">The little one is expected to arrive on June 22nd!</p>
           </li>
           <li>
           <p class="question"><i class="arrow down"></i> Have they chosen a name?</p>
@@ -52,14 +80,20 @@
           </li>
           </ul>
 
-          <h3 class="topic">...about the Mother-to-be</h3>
+          <h3 class="topic">...about the Parents-to-be</h3>
           <ul>
           <li>
-          <p class="question"><i class="arrow down"></i> What does she need the most?</p>
-          <p class="answer">There are items on the registry that are listed as Must-have. If you are a mother and you think of something that was not added, don't hesistate to get it.</p>
+          <p class="question"><i class="arrow down"></i> What does SHE need the most?</p>
+          <p class="answer">If you could order sleep, that's her first choice.. Since it's hard to find, buy her donuts, dumplings, or any dish with
+          an UberEats giftcard! <a href="https://about.ubereats.com/ca/en/how-it-works/uber-eats-gift-card/">Click here for UberEats Canada.</a></p>
+          </li>
+          <li>
+          <p class="question"><i class="arrow down"></i> What does HE need the most?</p>
+          <p class="answer">Coffee! If you'd like to order something special for the father,
+           a gift card to his favorite cafe would make him smile. <a href="https://zabcafe.com/en/collections/carte-cadeau/products/carte-cadeau-zab-gift-card">Get one here!</a> </p>
           </li>
           </ul>
-           <script>
+           <%# <script>
               const question = document.querySelectorAll("p.question")
 
               function changeDisplay(item) {
@@ -76,7 +110,7 @@
                   }
               })}
               question.forEach(changeDisplay);
-            </script>
+            </script> %>
       </div>
     </div>
   </div>
