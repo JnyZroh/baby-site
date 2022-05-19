@@ -35,6 +35,11 @@
   </thead>
 
   <tbody>
+    <%= form_tag '/new-text', method: "post" do %>
+      <div class="form-group">
+        <%= label_tag :message, "Enter a Message:" %>
+        <%= text_field_tag :message, '', class: "form-control", placeholder: "New things are happening!", required: "required" %>
+      </div>
     <% @guests.each do |guest| %>
       <tr>
         <td><%= guest.attending %></td>
@@ -50,6 +55,22 @@
         <td><%= link_to 'Show', guest %></td>
         <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
         <td><%= link_to 'Destroy', guest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+        <%#= form_tag '/new-text', method: "post" do %>
+         <%# <div class="form-group"> %>
+            <%#= label_tag :message, "Enter a Message:" %>
+            <%#= text_field_tag :message, '', class: "form-control", placeholder: "New things are happening!", required: "required" %>
+          <%# </div> %>
+         <div class="form-group">
+            <%= check_box_tag :guest, guest.id, class: "form-control" %>
+            <%= label_tag :guest, guest.phone_number %>
+            <%#= label_tag :number, "Phone number:" %>
+            <%#= text_field_tag :number, '', class: "form-control", placeholder: guest.phone_number %>
+          </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+        <% end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
