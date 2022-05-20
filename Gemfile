@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.5', '>= 6.1.5.1'
 # Use postgresql as the database for Active Record
@@ -31,6 +33,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # custom
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem "clearance"
+gem 'phonelib'
+gem 'twilio-ruby'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

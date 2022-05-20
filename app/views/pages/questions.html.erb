@@ -9,12 +9,14 @@
         <h1 class="questions">Details & Questions</h1>
         <h2 class="questions">Virtual shower details:</h2>
         <p>
-          Prepare your favorite tea or another drink to sip while we're together.
-          Janaya's favorites are Rooibos and Chai but prepare what you'd like.<br><br>
+          Prepare your favorite tea or another drink to sip while we're together. If you want to try Janaya's favorite teas, check out these two:
+          <a href="https://commoditeas.com/collections/all-teas/products/vanilla-rooibos">Vanilla Rooibos</a> and
+          <a href="https://commoditeas.com/collections/all-teas/products/chai-tea">Chai</a>.
+          <br><br>
           Dress to impress but still be comfortable. Most importantly, come prepared to have some fun!
           We'll play games and share stories and advice to prepare her for the little one!
         </p>
-        <p style="font-weight:bold">We want to send a special gift to 10 people. Please <%= link_to "RSVP by Sunday, May 29th", new_guest_path %>
+        <p style="font-weight:bold">We want to send a special gift to 10 people. Please <%= link_to "RSVP by Sunday, June 5th", new_guest_path %>
         to be included in the drawing!</p>
         <img id="tea" src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2067&q=80" alt="china teacup full of tea with tea leaves all around">
 
@@ -25,7 +27,7 @@
           <p class="question"><i class="arrow down"></i> I can no longer attend. Can I update my RSVP?</p>
           <p><div class="my-3">
             <form action="/guests/:id/edit" method="get">
-              <label for="phone_number">Enter your phone number to update your RSVP</label>
+              <label for="phone_number">Enter your phone number (include dashes) to update your RSVP</label>
               <div>
               <input type="text" name="phone_number" placeholder="### - ### - ####" class="label">
               <input type="submit" value="RSVP", class="button" >
@@ -35,10 +37,8 @@
           </li>
           <li>
           <p class="question"><i class="arrow down"></i> Is there a theme or dress code for the shower?</p>
-          <p class="answer">It would be great if you dressed as if you were joining us in person.
-          If you want to try Janaya's favorite teas, check out these two:
-          <a href="https://commoditeas.com/collections/all-teas/products/vanilla-rooibos">Vanilla Rooibos</a> and
-          <a href="https://commoditeas.com/collections/all-teas/products/chai-tea">Chai</a>.</p>
+          <p class="answer">It would be great if you dressed as if you were joining us in person. A beautiful, comfortable, summer dress would be perfect!
+          </p>
           </li>
           <li>
           <p class="question"><i class="arrow down"></i> What colors would they like for gifts?</p>
@@ -111,6 +111,10 @@
               })}
               question.forEach(changeDisplay);
             </script> %>
+          <div class="d-flex justify-content-center">
+            <%= link_to "Home", root_path, class: "btn btn-light", style:"font-weight: bold; box-shadow: 2px 2px rgba(0, 0, 0, 0.2)" %>
+          </div>
+
       </div>
     </div>
   </div>

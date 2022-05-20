@@ -1,0 +1,49 @@
+<h1>SMS Notifications</h1>
+<span><p id="notice" style="position:absolute; top: 10px; right: 10px; background-color:rgb(165, 156, 148); color:black"><%= notice %></p></span>
+<p>Use this form to send MMS notifications to any subscribers.</p>
+
+<%= form_tag '/new-text', method: "post" do %>
+  <div class="form-group">
+    <%= label_tag :message, "Enter a Message:" %>
+    <%= text_field_tag :message, '', class: "form-control", placeholder: "Send a message", required: "required" %>
+  </div>
+  <div class="form-group d-flex">
+    <%= label_tag :name, "Name:" %>
+    <%= text_field_tag :name, '', class: "form-control", placeholder: "Name", required: "required" %>
+    <%= label_tag :number, "Phone number:" %>
+    <%= text_field_tag :number, '', class: "form-control", placeholder: "Phone Number", required: "required" %>
+  </div>
+  <%# <div class="form-group">
+  </div> %>
+
+  <%# <div class="form-group"> %>
+    <%#= label_tag :number, "Phone number:" %>
+    <%# @guest_array = [] %>
+    <%# @guests.each do |g| %>
+    <%#= check_box_tag :guest, g.id, class: "form-control" %>
+    <%#= label_tag :guest, g.first_name %>
+    <%# end %>
+  <%# </div> %>
+
+  <%# <div class="form-group"> %>
+    <%#= label_tag :image_url, "Image Url:" %>
+    <%#= text_field_tag :image_url, '', class: "form-control", placeholder: "http://fake.twilio.com/some_image.png", required: "required" %>
+  <%# </div> %>
+  <button type="submit" class="btn btn-primary">Send Message</button>
+<% end -%>
+
+<ul>
+  <%= @notifications.size %>
+  <% @notifications.each do |n| %>
+  <li>
+  Message sent: <%= n.message %><br>
+  <% if n.sent_to %>
+    To: <%= n.sent_to %> on <%= n.created_at %>
+  <% end %>
+
+  <% if n.guest %>
+  To: <%= n.guest.first_name %> <%= n.guest.last_name %> on <%= n.created_at %>
+  <% end %>
+  </li>
+  <% end %>
+</ul>
