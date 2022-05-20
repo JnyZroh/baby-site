@@ -1,12 +1,12 @@
 <%# <h1>Guests#show</h1> %>
 <div class="d-flex" style="position:relative">
-  <span><p id="notice" style="position:absolute; top: 10px; right: 10px; background-color:rgb(165, 156, 148); color:black"><%= notice %></p></span>
+  <span><p id="notice" style="position:absolute; top: 10px; right: 10px; background-color:rgba(0, 82, 35, 0.8); color:white"><%= notice %></p></span>
   <div class="container m-0">
     <div class="row">
       <div class="col-3 sideImage">
       </div>
       <div class="col px-4 sideInfo">
-        <h1 class="questions">Details & Questions</h1>
+        <h1 class="questions mt-5 text-center">Details & Questions</h1>
         <h2 class="questions">Virtual shower details:</h2>
         <p>
           Prepare your favorite tea or another drink to sip while we're together. If you want to try Janaya's favorite teas, check out these two:
@@ -27,9 +27,9 @@
           <p class="question"><i class="arrow down"></i> I can no longer attend. Can I update my RSVP?</p>
           <p><div class="my-3">
             <form action="/guests/:id/edit" method="get">
-              <label for="phone_number">Enter your phone number (include dashes) to update your RSVP</label>
+              <label for="phone_number">Enter your phone number to update your RSVP</label>
               <div>
-              <input type="text" name="phone_number" placeholder="### - ### - ####" class="label">
+              <input type="text" name="phone_number" placeholder="### ### ####" class="label">
               <input type="submit" value="RSVP", class="button" >
               </div>
             </form>
@@ -111,11 +111,11 @@
               })}
               question.forEach(changeDisplay);
             </script> %>
-          <div class="d-flex justify-content-center">
-            <%= link_to "Home", root_path, class: "btn btn-light", style:"font-weight: bold; box-shadow: 2px 2px rgba(0, 0, 0, 0.2)" %>
-          </div>
 
       </div>
+          <div class="d-flex justify-content-center">
+            <%= link_to "Home", root_path, class: "btn btn-outline-light mb-4", style:"color:#2B3352; font-weight: bold; box-shadow: 2px 2px rgba(43, 51, 82, 0.2)" %>
+          </div>
     </div>
   </div>
 </div>

@@ -1,4 +1,3 @@
-
 <%= simple_form_for(@guest) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -12,7 +11,7 @@
     <%= f.input :last_name %>
     </div>
     <%= f.input :notes, label: "Will anyone else in your family or household join us?" %>
-    <%= f.input :phone_number, label:"Phone number (include dashes)", placeholder: "### - ### - ####" %>
+    <%= f.input :phone_number, label:"Phone number (include area code)", placeholder: "### ### ####" %>
     <%= f.input :address, label: "Address, if you would like a newborn photo ❤️" %>
     <div class="d-flex justify-content-between">
     <%= f.input :city_state, label: "City, State" %>

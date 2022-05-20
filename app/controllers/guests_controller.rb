@@ -19,7 +19,7 @@ class GuestsController < ApplicationController
   # GET /guests/1/edit
   def edit
     if @guest.nil?
-      redirect_to new_guest_path
+      redirect_to new_guest_path, notice: "Are you sure you used that number to RSVP? If so, please go back and put your number in again."
     end
   end
 
@@ -27,6 +27,7 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     number = @guest.phone_number
+    @guest.phone_number = @guest.phone_number.gsub(/[^0-9.]/,'')
     if @guest.save
       if @guest[:attending]== true
         message = "Hi #{@guest.first_name}, this confirms your RSVP for Janaya's baby shower on Sunday, June 12th at 3pm. The Zoom link will be sent to you by text, the day before the event."
@@ -50,6 +51,7 @@ class GuestsController < ApplicationController
   # PATCH/PUT /guests/1
   def update
     if @guest.update(guest_params)
+      @guest.phone_number = @guest.phone_number.gsub(/[^0-9.]/,'')
       if @guest.save
         number = @guest.phone_number
         if @guest[:attending]== true
@@ -81,9 +83,10 @@ class GuestsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
   def set_guest
     if !params[:phone_number].nil?
-    @guest = Guest.find_by(phone_number: params[:phone_number])
+      number = params[:phone_number].gsub(/[^0-9.]/,'')
+      @guest = Guest.find_by(phone_number: number)
     else
-    @guest = Guest.find(params[:id])
+      @guest = Guest.find(params[:id])
     end
   end
 

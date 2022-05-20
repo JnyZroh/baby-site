@@ -1,10 +1,13 @@
-<div class="d-flex">
+<div class="d-flex" style="position:relative">
+  <span><p id="notice" style="position:absolute; top: 10px; right: 10px; background-color:rgba(0, 82, 35, 0.8); color:white"><%= notice %></p></span>
   <div class="container m-0">
     <div class="row">
       <div class="col-3 sideImage">
       </div>
-      <div class="col px-4 sideInfo">
-        <h1 style="text-shadow: 2px 2px #7D7469">Add Your Info</h1>
+      <div class="col px-4 sideInfo my-5">
+        <div class="text-center">
+          <h1 style="text-shadow: 2px 2px #7D7469">Add Your Info</h1>
+        </div>
 
         <%= render 'form', guest: @guest %>
 
