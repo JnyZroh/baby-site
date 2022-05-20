@@ -2,14 +2,17 @@ class NotificationsController < ApplicationController
   before_action :require_login, only: [:index, :new]
 
   def new
-    @guests = Guest.all
-    guest = Guest.find(params[:guest])
-    message = "Hi #{guest.first_name}, " + params[:message]
-    number = guest.phone_number
-    store_notification(message, guest)
-    send_message(message, number)
+    # @guests = Guest.all
+    # guest = Guest.find(params[:guest])
+    @message = params[:message]
+    number = params[:number]
+    name = params[:name]
+    # number = guest.phone_number
+    store_notification(@message, '', name)
     # raise
-    redirect_to '/guests' , notice: "Message sent to #{guest.first_name} #{guest.last_name}!"
+    # send_message(message, number)
+    # raise
+    redirect_to '/notifications', notice: "Message sent to #{name}!"
   end
 
   def index
