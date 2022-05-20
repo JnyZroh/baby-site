@@ -5,8 +5,8 @@ class NotificationsController < ApplicationController
     @message = params[:message]
     number = params[:number]
     name = params[:name]
-    store_notification(@message, '', name)
-    send_message(@message, number)
+    sid = send_message(@message, number)
+    store_notification(@message, '', name, sid)
     redirect_to '/notifications', notice: "Message sent to #{name}!"
   end
 
