@@ -17,10 +17,13 @@ class ApplicationController < ActionController::Base
       :body => msg,
       # :media_url => image_url
     )
-    puts message.to
+    # puts message.to
+    # array = []
+    # array.push(message.sid)
+    return message.sid
   end
 
-  def store_notification(message, guest, name)
+  def store_notification(message, guest, name, sid)
   # def store_notification(message, _options = {})
     @notification = Notification.new
     @notification.message = message
@@ -29,6 +32,7 @@ class ApplicationController < ActionController::Base
     @notification.sent_to = name == "" ? "" : name
     # @notification.guest = guest
     @notification.user = current_user
+    @notification.reason = sid
     # @notification.reason = 'unknown'
     @notification.save
     # raise

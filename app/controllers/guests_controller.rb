@@ -31,15 +31,15 @@ class GuestsController < ApplicationController
     if @guest.save
       if @guest[:attending]== true
         message = "Hi #{@guest.first_name}, this confirms your RSVP for Janaya's baby shower on Sunday, June 12th at 3pm. The Zoom link will be sent to you by text, the day before the event."
-        store_notification(message, @guest, '')
-        send_message(message, number)
+        sid = send_message(message, number)
+        store_notification(message, @guest, '', sid)
         redirect_to questions_path, notice: "You have RSVP'd :) Zoom details will be sent soon"
       end
 
       if @guest[:attending]== false
         message = "Hi #{@guest.first_name}, thank you for letting us know that you cannot join us for Janaya's baby shower! If that changes, you can update your RSVP by returning to the https://bit.ly/babyzroh and clicking 'More Info'."
-        store_notification(message, @guest, '')
-        send_message(message, number)
+        sid = send_message(message, number)
+        store_notification(message, @guest, '', sid)
         redirect_to questions_path, notice: 'We wish you could join us! ❤️'
       end
 
@@ -56,15 +56,15 @@ class GuestsController < ApplicationController
         number = @guest.phone_number
         if @guest[:attending]== true
         message = "Hi #{@guest.first_name}, you have updated your RSVP and this message confirms that you are joining us for Janaya's baby shower on Sunday, June 12th at 3pm. The Zoom link will be sent to you by text, the day before the event."
-        store_notification(message, @guest, '')
-        send_message(message, number)
+        sid = send_message(message, number)
+        store_notification(message, @guest, '', sid)
         redirect_to questions_path, notice: "You have RSVP'd :) Zoom details will be sent soon!"
         end
 
         if @guest[:attending]== false
           message = "Hi #{@guest.first_name}, you have updated your RSVP and this message confirms that you are not coming to the baby shower."
-          store_notification(message, @guest, '')
-          send_message(message, number)
+          sid = send_message(message, number)
+          store_notification(message, @guest, '', sid)
           redirect_to questions_path, notice: 'We wish you could join us! ❤️'
         end
       else

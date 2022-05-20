@@ -35,15 +35,21 @@
 <ul>
   <%= @notifications.size %>
   <% @notifications.each do |n| %>
-  <li>
-  Message sent: <%= n.message %><br>
-  <% if n.sent_to %>
-    To: <%= n.sent_to %> on <%= n.created_at %>
-  <% end %>
+    <li>
+      Message sent: <%= n.message %><br>
 
-  <% if n.guest %>
-  To: <%= n.guest.first_name %> <%= n.guest.last_name %> on <%= n.created_at %>
-  <% end %>
-  </li>
+      <% if n.sent_to %>
+        To: <%= n.sent_to %> on <%= n.created_at %>
+      <% end %>
+
+      <% if n.guest %>
+      To: <%= n.guest.first_name %> <%= n.guest.last_name %> on <%= n.created_at %>
+      <% end %>
+
+      <% unless n.reason.nil? %>
+      <%= n.reason %>
+      <% end %>
+
+    </li>
   <% end %>
 </ul>
