@@ -13,6 +13,12 @@ class NotificationsController < ApplicationController
   def index
     @guests = Guest.all
     @notifications = Notification.all
+
+    @twilio_number = ENV['TWILIO_NUMBER']
+    account_sid = ENV['TWILIO_ACCOUNT_SID']
+    auth_token = ENV['TWILIO_AUTH_TOKEN']
+
+    @client = Twilio::REST::Client.new account_sid, auth_token
   end
 
 end
