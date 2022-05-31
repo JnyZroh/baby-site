@@ -1,0 +1,27 @@
+<div>
+  <div class="m-2 p-2" style="border: 1px solid black; border-radius: 10px; height: auto; width: 150px; position: relative">
+    <div class="pb-4">
+      <p class="name m-0" style="color:blue">
+        <% if msg.sent_to %>
+          <%= msg.sent_to %>
+        <% else %>
+          <%= msg.guest.first_name %> <%= msg.guest.last_name %>
+        <% end %>
+      </p>
+      <p class="m-0"><%= msg.created_at.strftime('%b %d, %l:%M%P') %></p>
+    </div>
+
+    <div style="position: absolute; bottom: 0; width:100%">
+      <% if msg.reason.nil? %>
+        <p style="position: absolute; bottom: 0; left:-8px; border-radius: 0 0 9px 9px; background-color: grey; width:100%; text-align:center" class="m-0">status unavailable</p>
+      <% else %>
+        <% msg = @client.messages(msg.reason).fetch %>
+        <% if msg.status == "delivered" %>
+          <span class="m-0" style="position: absolute; bottom: 0; left:-8px; border-radius: 0 0 9px 9px; background-color: green; width:100%; text-align:center"><%= msg.status %><span>
+        <% else %>
+          <span style="position: absolute; bottom: 0; left:-8px; border-radius: 0 0 9px 9px; background-color: red; width:100%; text-align:center"><%= msg.status %><span>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

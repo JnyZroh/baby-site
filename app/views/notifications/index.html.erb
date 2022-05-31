@@ -13,26 +13,9 @@
     <%= label_tag :number, "Phone number:" %>
     <%= text_field_tag :number, '', class: "form-control", placeholder: "Phone Number", required: "required" %>
   </div>
-  <%# <div class="form-group">
-  </div> %>
-
-  <%# <div class="form-group"> %>
-    <%#= label_tag :number, "Phone number:" %>
-    <%# @guest_array = [] %>
-    <%# @guests.each do |g| %>
-    <%#= check_box_tag :guest, g.id, class: "form-control" %>
-    <%#= label_tag :guest, g.first_name %>
-    <%# end %>
-  <%# </div> %>
-
-  <%# <div class="form-group"> %>
-    <%#= label_tag :image_url, "Image Url:" %>
-    <%#= text_field_tag :image_url, '', class: "form-control", placeholder: "http://fake.twilio.com/some_image.png", required: "required" %>
-  <%# </div> %>
   <button type="submit" class="btn btn-primary">Send Message</button>
 <% end -%>
 
-  <%= @notifications.size %>
   <% initial_invites = [] %>
   <% other = [] %>
   <% @notifications.each do |n| %>
@@ -44,61 +27,21 @@
       <% end %>
     <% end %>
 
-    <h3>Initial Invites</h3>
-    <div class="d-flex flex-wrap w-100" style="border:1px dotted black;">
-      <% initial_invites.each do |i| %>
-        <div class="m-2 p-2" style="border: 1px solid black; border-radius: 10px; height: auto; width: 150px; position: relative">
-          <p class="name" style="color:blue">
-            <% if i.sent_to %>
-              <%= i.sent_to %>
-            <% else %>
-              <%= i.guest.first_name %> <%= i.guest.last_name %>
-            <% end %>
-          </p>
-
-          <p>on <%= i.created_at %></p>
-
-            <% if i.reason.nil? %>
-              <p>No SID recorded</p>
-            <% else %>
-              <p class="m-0" style="overflow:clip"><%= i.reason %></p>
-              <% msg = @client.messages(i.reason).fetch %>
-              <% if msg.status == "delivered" %>
-                <span style="position: absolute; bottom: 0; border:1px dotted black; background-color: green;"><%= msg.status %><span>
-              <% else %>
-                <span style="position: absolute; bottom: 0; width:100%; background-color: red;"><%= msg.status %><span>
-              <% end %>
-            <% end %>
-        </div>
+    <h3>Initial Invites  - <%= initial_invites.size %></h3>
+    <div class="d-flex flex-wrap w-100 mb-3">
+      <% initial_invites.each do |msg| %>
+        <%= render 'msg_cards', msg: msg %>
       <% end %>
     </div>
 
-  <h3>Other Messages</h3>
-    <div class="d-flex flex-wrap w-100" style="border:1px dotted black;">
-      <% other.each do |o| %>
-        <div class="m-2 p-2" style="border: 1px solid black; border-radius: 10px; height: auto; width: 150px; position: relative">
-          <p class="name" style="color:blue">
-            <% if o.sent_to %>
-              <%= o.sent_to %>
-            <% else %>
-              <%= o.guest.first_name %> <%= o.guest.last_name %>
-            <% end %>
-          </p>
+  <h3>Other Messages - <%= other.size %></h3>
+    <div class="d-flex flex-wrap w-100 mb-3">
 
-          <p>on <%= o.created_at %></p>
+      <% other.each do |msg| %>
+        <%= render 'msg_cards', msg: msg %>
+      <% end %>
+    </div>
 
-
-            <% if o.reason.nil? %>
-              <p>No SID recorded</p>
-            <% else %>
-              <p class="m-0" style="overflow:clip"><%= o.reason %></p>
-              <% msg = @client.messages(o.reason).fetch %>
-              <% if msg.status == "delivered" %>
-                <span style="position: absolute; bottom: 0; border:1px dotted black; background-color: green;"><%= msg.status %><span>
-              <% else %>
-                <span style="position: absolute; bottom: 0; width:100%; background-color: red;"><%= msg.status %><span>
-              <% end %>
-            <% end %>
-      </div>
-    <% end %>
-  </div>
+  <p>
+    Total messages: <%= @notifications.size %>
+  </p>
