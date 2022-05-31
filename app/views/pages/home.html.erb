@@ -33,34 +33,58 @@
         <div class="mainInfoDiv">
           <h2>Join the virtual baby shower for<br>Janaya Gripper Zroh!</h2>
           <p>Sunday, June 12th, 2022 | 3:00-4:30pm<br>
-          <span style="font-size:16px">**RSVP by June 5th to be included in a special drawing**</span></p>
+          <span style="font-size:16px; border-bottom: 2px solid rgba(143, 46, 5, 0.8)">**RSVP by June 5th to be included in a special drawing**</span></p>
           <p>It would certainly be better to all be together but even apart,
-          you can give Baby Zroh a good start. ❤ <br> Get something for the baby and
+          you can give Baby Zroh a good start. <span style="color: rgb(143, 46, 5)">❤</span> <br> Get something for the baby and
           send it to this special lady. Then join us for a call so she can share
           her joy with us all.</p>
         </div>
 
         <div class="linksDiv">
           <div class="my-3" style="width: 300px; margin: 0 auto">
-            <p>You can click to RSVP now or get More Info about the Shower.</p>
-            <p class="d-flex justify-content-around m-0" style="padding: 10px 0">
-              <%= link_to "RSVP now", new_guest_path, class: "btn btn-outline-light", style:"font-weight: bold; box-shadow: 2px 2px rgba(0, 0, 0, 0.2)" %>
-              <%= link_to "More Info", questions_path, class: "btn btn-outline-light", style:"font-weight: bold; box-shadow: 2px 2px rgba(0, 0, 0, 0.2)" %>
-            </p>
+            <div class="d-flex justify-content-around">
+              <%= link_to "RSVP Now", new_guest_path, class: "btn btn-outline-light", style:"font-weight: bold; box-shadow: 2px 2px rgba(0, 0, 0, 0.2); height: 36px" %>
+              <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#updateRSVPModal" style="font-weight: bold; box-shadow: 2px 2px rgba(0, 0, 0, 0.2); height: 36px">
+                Change RSVP
+              </button>
+            </div>
+
           </div>
+              <p>Click <%= link_to "More Info", questions_path, style:"font-weight: bold;" %> for details about the shower, the baby, and the parents!</p>
           <p>Want to send a bit of your love to Montreal?</p>
           <p>Visit the <a href="https://amzn.to/3KQxCLS" class="gifts">Baby Registry</a>
           or <br> send a monetary gift with <a href="https://cash.app/$jnygrppr" class="gifts">CashApp</a></p>
-          <%# <div class="my-1" style="width: 300px; margin: 0 auto">
-            <p class="m-0">Visit the Amazon Baby Registry or send money with CashApp</p>
-            <div class="d-flex justify-content-around">
-              <div class="btn p-1"><a href="https://amzn.to/3KQxCLS" class="gifts">Baby Registry</a></div>
-              <div class="btn p-1"><a href="https://amzn.to/3KQxCLS" class="gifts">Baby Registry</a></div>
-            </div>
-          </div> %>
+
         </div>
-          <p style="padding: 10px 0">
-          </p>
+
+          <!-- Modal -->
+          <div class="modal fade" id="updateRSVPModal" tabindex="-1" role="dialog" aria-labelledby="updateRSVPModalLabel" aria-hidden="true">
+            <div class="modal-dialog m-4" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="updateRSVPModalLabel">Find Your RSVP</h5>
+                  <button type="button" class="close px-2" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">Cancel</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <p><div class="my-3">
+                    <form action="/guests/:id/edit" method="get">
+                      <label for="phone_number">Enter your phone number to find your RSVP:</label>
+                      <div>
+                      <input type="text" name="phone_number" placeholder="### ### ####" class="label" style="border:1px solid rgb(165, 156, 148)">
+                      <input type="submit" value="Search", class="button" >
+                      </div>
+                    </form>
+                  </div></p>
+                </div>
+                <%# <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div> %>
+              </div>
+            </div>
+        </div>
 
       </div>
   </div>
