@@ -1,8 +1,7 @@
 .sideImage {
   height: 100vh;
   width: 500px;
-  // background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("Nursery_Tent.jpeg");
-  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("unsplash-baby-feet.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("unsplash-baby-feet_medium_res.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   background-position: bottom;
@@ -16,7 +15,6 @@ body {
 
 h1.questions {
   margin-bottom: 20px;
-  // text-shadow: 2px 2px #7D7469;
   text-shadow: 2px 2px #8f2e05;
   font-size: 64px;
 }
@@ -29,7 +27,7 @@ h2.questions {
 h3.topic {
   font-size: 20px;
   padding-left: 20px;
-  color: #8f2e05;
+  color: rgb(143, 46, 5);
 }
 
 a {
@@ -41,7 +39,6 @@ a:hover {
 
 @media only screen and (min-width: 1000px) {
   .sideInfo{
-    // width: 90vw;
     margin: 30px auto;
 
   }
@@ -80,9 +77,6 @@ a:hover {
   .sideImage {
     display: none;
   }
-  // .sideInfo{
-  //   margin: 15px;
-  // }
   img#tea {
     display: block;
     height: 100px;
@@ -104,7 +98,6 @@ p.question {
   color: #2B3352;
 }
 p.answer {
-  // display: none;
   padding: 0;
 }
 
@@ -134,8 +127,6 @@ div#colors span {
   background-color: #FFE4AF;
 }
 #red {
-  // background-color: #C25523;
-  // background-color: #B7410E;
   background-color: #8f2e05;
 }
 #teal {

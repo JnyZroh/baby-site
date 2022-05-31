@@ -35,26 +35,27 @@ body {
   background-position:center;
   background-size: 1500px;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 500px) {
   .background {
     height: 130vh;
     border: 1px, solid, blue;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Crib.jpeg");
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Crib_large_res.jpeg");
   }
   .linksDiv {
     width: 400px;
     color: white;
   }
 
-  .linksDiv a {
+  .linksDiv a,
+   .linksDiv button{
     color: rgba(255, 228, 175, 0.85);
   }
-  .linksDiv a:hover {
-    // color: rgba(255, 228, 175, 0.85);
+  .linksDiv a:hover,
+  .linksDiv button:hover {
     color: rgba(0, 0, 0, 0.6);
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   body {
     width: 400px;
   }
@@ -62,14 +63,15 @@ body {
     overflow:scroll;
     border: 1px, solid, blue;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Tent.jpeg");
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("Nursery_Tent_portrait_medium_res.jpeg");
     background-size: cover;
   }
   .linksDiv {
     width: 300px;
     color:white;
   }
-  .linksDiv a {
+  .linksDiv a,
+  .linksDiv button {
     color: rgba(255, 228, 175, 0.85);
   }
 }
@@ -113,13 +115,11 @@ h2 {
 
 .linksDiv {
   margin-top: 15px;
-  // background-color: rgba(172, 172, 172, 0.5);
   background-color:rgba(165, 156, 148, 0.5);
   padding: 5px;
   border-radius: 20px;
   margin: 0 auto;
   font-weight: bold;
-  // color: white;
 }
 .linksDiv a {
   font-weight: bold;
