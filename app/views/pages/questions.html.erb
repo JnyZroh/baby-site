@@ -1,4 +1,3 @@
-<%# <h1>Guests#show</h1> %>
 <div class="d-flex" style="position:relative">
   <span><p id="notice" style="position:absolute; top: 10px; right: 10px; background-color:rgba(0, 82, 35, 0.8); color:white"><%= notice %></p></span>
   <div class="container m-0">
@@ -24,13 +23,13 @@
           <h3 class="topic">...about the Shower</h3>
           <ul>
           <li>
-          <p class="question"><i class="arrow down"></i> I can no longer attend. Can I update my RSVP?</p>
+          <p class="question"><i class="arrow down"></i> I can no longer attend. Can I change my RSVP?</p>
           <p><div class="my-3">
             <form action="/guests/:id/edit" method="get">
-              <label for="phone_number">Enter your phone number to update your RSVP</label>
+              <label for="phone_number">Enter your phone number to find and update your RSVP</label>
               <div>
               <input type="text" name="phone_number" placeholder="### ### ####" class="label">
-              <input type="submit" value="RSVP", class="button" >
+              <input type="submit" value="Search", class="button" >
               </div>
             </form>
           </div></p>
@@ -38,6 +37,11 @@
           <li>
           <p class="question"><i class="arrow down"></i> Is there a theme or dress code for the shower?</p>
           <p class="answer">It would be great if you dressed as if you were joining us in person. A beautiful, comfortable, summer dress would be perfect!
+          </p>
+          </li>
+          <li>
+          <p class="question"><i class="arrow down"></i> Do they have a baby registry?</p>
+          <p class="answer">Yes! It is on AMAZON.CA (the Canadian Amazon website) - <a href="https://amzn.to/3KQxCLS">click here</a>. Try not to buy gifts on amazon.com (the American Amazon website) because the parents may have to pay extra taxes on your gift.</p>
           </p>
           </li>
           <li>
@@ -66,7 +70,6 @@
           <li>
             <p class="question"><i class="arrow down"></i> Do they want a boy or a girl?</p>
             <div>
-              <%# <img id="hair" src="https://www.voice-online.co.uk/wp-content/uploads/2021/09/GettyImages-169327593.jpg" alt=""> %>
               <p class="answer">Janaya is not sure she can handle a full head of hair, so she'd love to have a boy! Nate is ready for either!</p>
             </div>
           </li>
@@ -93,25 +96,6 @@
            a gift card to his favorite cafe would make him smile. <a href="https://zabcafe.com/en/collections/carte-cadeau/products/carte-cadeau-zab-gift-card">Get one here!</a> </p>
           </li>
           </ul>
-           <%# <script>
-              const question = document.querySelectorAll("p.question")
-
-              function changeDisplay(item) {
-                const answer = item.nextElementSibling
-                item.addEventListener("click", (event) => {
-                console.log(event);
-                console.log(event.currentTarget);
-                if (answer.style.display === "none") {
-                    answer.style.display = "block";
-                    item.style.backgroundColor = "#FFFFFF";
-                  } else {
-                    answer.style.display = "none";
-                    item.style.backgroundColor = "";
-                  }
-              })}
-              question.forEach(changeDisplay);
-            </script> %>
-
       </div>
           <div class="d-flex justify-content-center">
             <%= link_to "Home", root_path, class: "btn btn-outline-light mb-4", style:"color:#2B3352; font-weight: bold; box-shadow: 2px 2px rgba(43, 51, 82, 0.2)" %>
