@@ -9,6 +9,7 @@
         <% end %>
       </p>
       <p class="m-0"><%= msg.created_at.strftime('%b %d, %l:%M%P') %></p>
+      <p style="overflow-wrap: break-word;"><%= msg.reason %></p>
     </div>
 
     <div style="position: absolute; bottom: 0; width:100%">
