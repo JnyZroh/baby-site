@@ -2,12 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@media only screen and (min-width: 600px) {
-}
+// @media only screen and (min-width: 600px) {
+// }
 
-@media only screen and (max-width: 600px) {
-  .sideImage {
-    display: none;
-  }
+// @media only screen and (max-width: 600px) {
+//   .sideImage {
+//     display: none;
+//   }
 
+// }
+
+// * {
+//   color: olivedrab
+// }
+th, td {
+  padding: 5px 10px;
+  border: 1px solid black;
 }
